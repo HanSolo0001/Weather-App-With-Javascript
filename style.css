@@ -1,5 +1,37 @@
 *,
 *::before,
 *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
     box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #06283D;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 105px;
+    background: #fff;
+    padding: 28px 32px;
+    overflow: hidden;
+    border-radius: 18px;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -ms-border-radius: 18px;
+    -o-border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out;
+    -webkit-transition: 0.6s ease-out;
+    -moz-transition: 0.6s ease-out;
+    -ms-transition: 0.6s ease-out;
+    -o-transition: 0.6s ease-out;
 }
