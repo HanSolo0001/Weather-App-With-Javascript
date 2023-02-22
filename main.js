@@ -11,7 +11,7 @@ search.addEventListener('click', () => {
     if (city === '')
         return;
 
-    fetch('https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}')
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit={5}&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
             if (json.cod === '404') {
@@ -58,10 +58,10 @@ search.addEventListener('click', () => {
             }
 
 
-            temperature.innerHTML = '${parseInt(json.main.temp)}<span>°C</span>';
-            description.innerHTML = '${json.weather[0].description}';
-            humidity.innerHTML = '{json.main.humidity}%';
-            wind.innerHTML = '${parseInt(json.wind.speed)}Km/h';
+            temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+            description.innerHTML = `${json.weather[0].description}`;
+            humidity.innerHTML = `${json.main.humidity}%`;
+            wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
 
             weatherBox.style.display = '';
             weatherDetails.style.display = '';
